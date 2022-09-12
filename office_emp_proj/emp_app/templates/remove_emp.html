@@ -13,12 +13,20 @@
 </head>
 <body>
 <div class="container">
-    <h1>Office Employee Management System</h1>
-    <hr/>
-    <a class="btn btn-secondary" href="/all_emp" role="button">View All Employee</a>
-    <a class="btn btn-secondary" href="/add_emp" role="button">Add An Employee</a>
-    <a class="btn btn-secondary" href="/remove_emp" role="button">Remove An Employee</a>
-    <a class="btn btn-secondary" href="/filter_emp" role="button">Filter Employee Details</a>
+    <h1>Remove An Employee</h1>
+    <hr>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Choose Employee To Be Removed
+        </button>
+        <ul class="dropdown-menu">
+            {% for emp in emps %}
+            <li><a class="dropdown-item" href="/remove_emp/{{emp.id}}">{{emp.first_name}} {{emp.last_name}}</a></li>
+            {% endfor %}
+
+        </ul>
+    </div>
+
 </div>
 
 

@@ -13,12 +13,21 @@
 </head>
 <body>
 <div class="container">
-    <h1>Office Employee Management System</h1>
-    <hr/>
-    <a class="btn btn-secondary" href="/all_emp" role="button">View All Employee</a>
-    <a class="btn btn-secondary" href="/add_emp" role="button">Add An Employee</a>
-    <a class="btn btn-secondary" href="/remove_emp" role="button">Remove An Employee</a>
-    <a class="btn btn-secondary" href="/filter_emp" role="button">Filter Employee Details</a>
+    <h1>Filter Employee</h1>
+    <hr>
+    <form action="/filter_emp" method="post">
+        {%csrf_token %}
+
+        <label for="name">Employee First/Last Name</label><br>
+        <input type="text" id="name" name="name" value="{{name}}"><br>
+        <label for="dept">Department</label><br>
+        <input type="text" id="dept" name="dept" value="{{dept}}"><br>
+        <label for="role">Role</label><br>
+        <input type="text" id="role" name="role" value="{{role}}"><br>
+        <hr>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+
 </div>
 
 
