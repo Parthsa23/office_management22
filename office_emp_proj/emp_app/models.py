@@ -7,11 +7,11 @@ from django.db import models
 class Employee(models.Model):
     first_name = models.CharField(max_length=90, blank=True)
     last_name = models.CharField(max_length=90)
-    dept =  models.CharField(max_length=90, blank=True)
+    dept = models.CharField(max_length=90, blank=True)
     salary = models.IntegerField(default=0)
     location = models.CharField(max_length=100, blank=True)
     bonus = models.IntegerField(default=0)
-    role =models.CharField(max_length=90, blank=True)
+    role = models.CharField(max_length=90, blank=True)
     phone = models.IntegerField(default=0)
     hire_date = models.DateField()
 

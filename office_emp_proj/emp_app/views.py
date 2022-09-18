@@ -32,7 +32,7 @@ def add_emp(request):
         location = request.POST['location']
 
         new_emp = Employee(first_name=first_name, last_name=last_name, salary=salary, bonus=bonus, phone=phone,
-                           dept=dept, role=role, hire_date=datetime.now(),location=location)
+                           dept=dept, role=role, hire_date=datetime.now(), location=location)
         new_emp.save()
         return HttpResponse('Employee added Successfully')
 
@@ -62,7 +62,7 @@ def filter_emp(request):
     if request.method == 'POST':
         name = request.POST['name']
         dept = request.POST['dept']
-        # role = request.POST['role']
+        role = request.POST['role']
         emps = Employee.objects.all()
 
         if name:
